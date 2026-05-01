@@ -13,8 +13,64 @@ load_dotenv()
 # Build vector store if not exists
 import os
 if not os.path.exists("chroma_db"):
-    import subprocess
-    subprocess.run(["python", "ingest.py"], check=True)
+    import json
+    from langchain_core.documents import Document
+    
+    with open("data/cards_raw.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+    
+    documents = []
+    for card in data["cards"]:
+        card_name = card["card_name"]
+        bank = card["bank"]
+        
+        for rate in card["earn_rates"]:
+            content = f"""Card: {card_name}
+Bank: {bank}
+Category: {rate['category']}
+Earn Rate: {rate['earn_rate']} {rate['unit']}
+Monthly Cap: {rate['monthly_cap_sgd'] if rate['monthly_cap_sgd'] else 'No cap'}
+Notes: {rate['notes']}
+Annual Fee: S${card['annual_fee']} ({card['annual_fee_waiver']})
+Min Income: S${card['min_income_sgd']}"""
+            documents.append(Document(
+                page_content=content,
+                metadata={
+                    "card_name": card_name,
+                    "bank": bank,
+                    "category": rate["category"],
+                    "earn_rate": rate["earn_rate"],
+                    "monthly_cap_sgd": rate["monthly_cap_sgd"] or 0,
+                    "annual_fee": card["annual_fee"],
+                    "min_income_sgd": card["min_income_sgd"]
+                }
+            ))
+        
+        overview = f"""Card: {card_name}
+Bank: {bank}
+Annual Fee: S${card['annual_fee']}
+Annual Fee Waiver: {card['annual_fee_waiver']}
+Sign-up Bonus: {card.get('sign_up_bonus_notes', 'None')}
+Min Income: S${card['min_income_sgd']}
+Points Conversion: {card.get('points_to_miles_conversion', 'N/A')}
+Miles Expiry: {card.get('miles_expiry', 'Not specified')}"""
+        documents.append(Document(
+            page_content=overview,
+            metadata={
+                "card_name": card_name,
+                "bank": bank,
+                "category": "overview",
+                "annual_fee": card["annual_fee"],
+                "min_income_sgd": card["min_income_sgd"]
+            }
+        ))
+    
+    temp_embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+    Chroma.from_documents(
+        documents=documents,
+        embedding=temp_embeddings,
+        persist_directory="chroma_db"
+    )
 
 # Page config
 st.set_page_config(
