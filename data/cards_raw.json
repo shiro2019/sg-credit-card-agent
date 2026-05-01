@@ -1,0 +1,226 @@
+{
+  "cards": [
+    {
+      "card_name": "Citi Rewards Card",
+      "bank": "Citibank",
+      "annual_fee": 196.20,
+      "annual_fee_waiver": "First year free",
+      "earn_rates": [
+        {
+          "category": "online_retail",
+          "earn_rate": 4.0,
+          "unit": "mpd",
+          "monthly_cap_sgd": 1000,
+          "notes": "10X Points on online transactions excluding travel-related MCCs. Cap of 9,000 Bonus Points/month shared with shopping_instore category"
+        },
+        {
+          "category": "shopping_instore",
+          "earn_rate": 4.0,
+          "unit": "mpd",
+          "monthly_cap_sgd": 1000,
+          "notes": "10X Points at clothing, shoes, bags, department stores (MCC 5311/5611/5621/5631/5641/5651/5655/5661/5691/5699/5948). Cap shared with online_retail category. Excludes travel MCCs 3000-3999, 4111, 4112, 4411, 4511, 4722, 4723, 4789, 5962, 7011, 7012, 7512"
+        },
+        {
+          "category": "others",
+          "earn_rate": 0.4,
+          "unit": "mpd",
+          "monthly_cap_sgd": null,
+          "notes": "1 Base Point per S$1 on all other qualifying charges"
+        }
+      ],
+      "points_to_miles_conversion": "25 ThankYou Points = 10 KrisFlyer Miles",
+      "points_validity_months": 60,
+      "miles_expiry": null,
+      "min_redemption_miles": null,
+      "sign_up_bonus_miles": 16000,
+      "sign_up_bonus_notes": "40,000 Citi ThankYou Points (= 16,000 KrisFlyer Miles) with qualifying spend",
+      "sign_up_spend_requirement_sgd": null,
+      "sign_up_spend_days": null,
+      "renewal_bonus_miles": null,
+      "renewal_bonus_notes": null,
+      "priority_pass": null,
+      "travel_insurance_coverage_sgd": null,
+      "travel_insurance_notes": null,
+      "min_income_sgd": 30000,
+      "source_url": "https://www.citibank.com.sg/credit-cards/rewards/citi-rewards-card/",
+      "last_updated": "2026-04-27"
+    },
+    {
+      "card_name": "DBS Altitude Card",
+      "bank": "DBS",
+      "annual_fee": 196.20,
+      "annual_fee_waiver": "Min S$25,000 spend per year",
+      "earn_rates": [
+        {
+          "category": "overseas",
+          "earn_rate": 2.2,
+          "unit": "mpd",
+          "monthly_cap_sgd": null,
+          "notes": "Foreign currency transactions"
+        },
+        {
+          "category": "local",
+          "earn_rate": 1.3,
+          "unit": "mpd",
+          "monthly_cap_sgd": null,
+          "notes": "All local SGD spend"
+        }
+      ],
+      "points_to_miles_conversion": "5 DBS Points = 2 KrisFlyer Miles",
+      "points_validity_months": null,
+      "miles_expiry": "Never expire",
+      "min_redemption_miles": null,
+      "sign_up_bonus_miles": 38000,
+      "sign_up_bonus_notes": "38,000 miles with min S$800 spend within 60 days",
+      "sign_up_spend_requirement_sgd": 800,
+      "sign_up_spend_days": 60,
+      "renewal_bonus_miles": null,
+      "renewal_bonus_notes": null,
+      "priority_pass": null,
+      "travel_insurance_coverage_sgd": null,
+      "travel_insurance_notes": null,
+      "min_income_sgd": 30000,
+      "source_url": "https://www.dbs.com.sg/personal/cards/credit-cards/dbs-altitude-cards",
+      "last_updated": "2026-04-27"
+    },
+    {
+      "card_name": "UOB PRVI Miles Card",
+      "bank": "UOB",
+      "annual_fee": 261.60,
+      "annual_fee_waiver": "First year free",
+      "earn_rates": [
+        {
+          "category": "airlines_hotels",
+          "earn_rate": 8.0,
+          "unit": "mpd",
+          "monthly_cap_sgd": null,
+          "notes": "Major airlines and hotels booked via Agoda and Expedia only"
+        },
+        {
+          "category": "overseas",
+          "earn_rate": 3.0,
+          "unit": "mpd",
+          "monthly_cap_sgd": null,
+          "notes": "3 mpd for Malaysia, Indonesia, Thailand, Vietnam; 2.4 mpd for all other overseas spend"
+        },
+        {
+          "category": "local",
+          "earn_rate": 1.4,
+          "unit": "mpd",
+          "monthly_cap_sgd": null,
+          "notes": "All local SGD spend including daily commute"
+        }
+      ],
+      "points_to_miles_conversion": "1 UNI$ = 2 KrisFlyer Miles",
+      "points_validity_months": null,
+      "miles_expiry": null,
+      "min_redemption_miles": null,
+      "sign_up_bonus_miles": null,
+      "sign_up_bonus_notes": "No standard sign-up bonus; 20,000 loyalty miles for Amex version with min S$50,000 annual spend",
+      "sign_up_spend_requirement_sgd": null,
+      "sign_up_spend_days": null,
+      "renewal_bonus_miles": null,
+      "renewal_bonus_notes": null,
+      "priority_pass": null,
+      "travel_insurance_coverage_sgd": null,
+      "travel_insurance_notes": null,
+      "min_income_sgd": 30000,
+      "source_url": "https://www.uob.com.sg/personal/cards/travel/prvi-miles-card.page",
+      "last_updated": "2026-04-27"
+    },
+    {
+      "card_name": "OCBC 90°N Card",
+      "bank": "OCBC",
+      "annual_fee": 196.20,
+      "annual_fee_waiver": "First year free; subsequent years waived with min S$10,000 spend",
+      "earn_rates": [
+        {
+          "category": "agoda",
+          "earn_rate": 7.0,
+          "unit": "mpd",
+          "monthly_cap_sgd": null,
+          "notes": "7 mpd for foreign currency bookings on Agoda; 6 mpd for SGD bookings on Agoda"
+        },
+        {
+          "category": "overseas",
+          "earn_rate": 2.1,
+          "unit": "mpd",
+          "monthly_cap_sgd": null,
+          "notes": "All foreign currency spend"
+        },
+        {
+          "category": "local",
+          "earn_rate": 1.3,
+          "unit": "mpd",
+          "monthly_cap_sgd": null,
+          "notes": "All local SGD spend"
+        }
+      ],
+      "points_to_miles_conversion": "1 90°N Mile = 1 KrisFlyer Mile",
+      "points_validity_months": null,
+      "miles_expiry": "Never expire",
+      "min_redemption_miles": 1000,
+      "sign_up_bonus_miles": 26000,
+      "sign_up_bonus_notes": "26,000 90°N Miles with min S$600 spend within 30 days",
+      "sign_up_spend_requirement_sgd": 600,
+      "sign_up_spend_days": 30,
+      "renewal_bonus_miles": 10000,
+      "renewal_bonus_notes": "10,000 bonus miles upon payment of annual fee",
+      "priority_pass": null,
+      "travel_insurance_coverage_sgd": null,
+      "travel_insurance_notes": null,
+      "min_income_sgd": 30000,
+      "source_url": "https://www.ocbc.com/personal-banking/cards/90-degrees-travel-credit-card.page",
+      "last_updated": "2026-04-27"
+    },
+    {
+      "card_name": "Standard Chartered Journey Card",
+      "bank": "Standard Chartered",
+      "annual_fee": 196.20,
+      "annual_fee_waiver": "Optional first year waiver available at application; no waiver in subsequent years",
+      "earn_rates": [
+        {
+          "category": "bonus_transactions",
+          "earn_rate": 3.0,
+          "unit": "mpd",
+          "monthly_cap_sgd": 1000,
+          "notes": "SGD transactions at Transportation (MCC 4111/4121/4411/4789: Grab, Gojek, etc.), Food Delivery (MCC 5811/5812/5814: GrabFood, Foodpanda, Deliveroo, etc.), Online Groceries (MCC 5411/5462/5499/5921: NTUC FairPrice Online, etc.). 7.5 points per S$1; cap of 4,500 bonus points/month. Base 1.2 mpd still earned beyond cap."
+        },
+        {
+          "category": "overseas",
+          "earn_rate": 2.0,
+          "unit": "mpd",
+          "monthly_cap_sgd": null,
+          "notes": "All foreign currency spend; 5 Rewards Points per S$1"
+        },
+        {
+          "category": "local",
+          "earn_rate": 1.2,
+          "unit": "mpd",
+          "monthly_cap_sgd": null,
+          "notes": "All local SGD spend excluding bonus categories; 3 Rewards Points per S$1"
+        }
+      ],
+      "points_to_miles_conversion": "25,000 Rewards Points = 10,000 KrisFlyer Miles",
+      "points_validity_months": null,
+      "miles_expiry": "Never expire",
+      "min_redemption_miles": null,
+      "sign_up_bonus_miles": 30000,
+      "sign_up_bonus_notes": "30,000 miles with min S$800 spend within 60 days (annual fee of S$180 excl GST applied); or 20,000 miles with annual fee waiver option",
+      "sign_up_spend_requirement_sgd": 800,
+      "sign_up_spend_days": 60,
+      "renewal_bonus_miles": 10000,
+      "renewal_bonus_notes": "25,000 Rewards Points (= 10,000 KrisFlyer Miles) upon card anniversary and payment of annual fee (effective 1 Jul 2024). Waiving annual fee reverses the bonus.",
+      "priority_pass": {
+        "included": true,
+        "complimentary_visits_per_year": 2,
+        "notes": "2 complimentary visits per year (principal cardholder only). Guest visits count toward the 2-visit limit. Additional visits charged at Priority Pass prevailing rate."
+      },
+      "travel_insurance_coverage_sgd": 500000,
+      "travel_insurance_notes": "Complimentary when travel fare is charged to the card",
+      "min_income_sgd": 30000,
+      "source_url": "https://www.sc.com/sg/credit-cards/journey-credit-card/",
+      "last_updated": "2026-04-27"
+    }
+  ]
+}
