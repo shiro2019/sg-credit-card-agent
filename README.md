@@ -9,27 +9,20 @@ An agentic RAG system that recommends the optimal Singapore credit card based on
 ## Features
 
 - **Agentic RAG**: LangGraph ReAct agent autonomously decides which tools to call based on user queries
-- **Deterministic calculation**: Miles/cashback computed via Python functions — never by LLM — to eliminate hallucination
+- **Deterministic calculation**: Miles/cashback computed via Python functions but not by LLM to eliminate hallucination
 - **Hybrid knowledge base**: ChromaDB vector store with semantic search over card rules and T&C documents
 - **Multi-card comparison**: Ranks all available cards by projected monthly miles given user spending profile
 
 ## Architecture
 
 User Input
-↓
+    ↓
 ReAct Agent (gpt-4o-mini)
-↓
-┌─────────────────────────────────┐
-│  Tools                          │
-│  • search_card_rules   (RAG)    │
-│  • compare_all_cards   (calc)   │
-│  • calculate_card_rewards       │
-│  • get_card_details             │
-└─────────────────────────────────┘
-↓
-Deterministic Calculator
-(Python — no LLM involvement)
-↓
+    ↓
+[search_card_rules] [compare_all_cards] [calculate_card_rewards] [get_card_details]
+    ↓
+Deterministic Calculator (Python)
+    ↓
 Natural Language Response
 
 ## Tech Stack
