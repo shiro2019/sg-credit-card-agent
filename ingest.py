@@ -7,11 +7,11 @@ from langchain_core.documents import Document
 
 load_dotenv()
 
-# 读取JSON数据
+# Read raw card data
 with open("data/cards_raw.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
-# 把每张卡的每个earn_rate规则转成独立Document
+# Convert each earn_rate rule of each card into a separate Document
 documents = []
 
 for card in data["cards"]:
@@ -21,7 +21,7 @@ for card in data["cards"]:
     annual_fee_waiver = card["annual_fee_waiver"]
     min_income = card["min_income_sgd"]
 
-    # 每个earn_rate单独存一个chunk
+    # Each earn_rate is stored in a separate chunk
     for rate in card["earn_rates"]:
         content = f"""
 Card: {card_name}
@@ -47,7 +47,7 @@ Min Income: S${min_income}
         )
         documents.append(doc)
 
-    # 卡片整体信息也存一个chunk
+    # The overall card information is also stored in a separate chunk
     overall_content = f"""
 Card: {card_name}
 Bank: {bank}
@@ -72,7 +72,7 @@ Miles Expiry: {card.get('miles_expiry', 'Not specified')}
 
 print(f"Total documents created: {len(documents)}")
 
-# 存入ChromaDB
+# Store in ChromaDB
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 vectorstore = Chroma.from_documents(
     documents=documents,

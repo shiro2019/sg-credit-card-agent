@@ -10,14 +10,14 @@ from tools.calculator import calculate_monthly_miles, compare_cards, get_card_in
 
 load_dotenv()
 
-# 初始化向量数据库
+# Initialize vectorstore 
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 vectorstore = Chroma(
     persist_directory="chroma_db",
     embedding_function=embeddings
 )
 
-# 定义工具
+# Tools definitions
 @tool
 def search_card_rules(query: str) -> str:
     """
@@ -100,7 +100,7 @@ def get_card_details(card_name: str) -> str:
     return json.dumps(result, indent=2)
 
 
-# 创建Agent
+# Initialize the agent
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 tools = [search_card_rules, calculate_card_rewards, compare_all_cards, get_card_details]

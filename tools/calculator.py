@@ -6,7 +6,7 @@ with open("data/cards_raw.json", "r", encoding="utf-8") as f:
 
 def _get_base_rate(card: dict) -> float | None:
     """
-    获取一张卡的兜底倍率，优先选 'others'，其次 'local'，找不到返回 None
+    Get the fallback multiplier for a card, prioritizing 'others', then 'local', and returning None if no match is found
     """
     for priority_category in ["others", "local"]:
         for rate in card["earn_rates"]:
@@ -25,7 +25,7 @@ def calculate_monthly_miles(card_name: str, spending: dict) -> dict:
     if not card:
         return {"error": f"Card '{card_name}' not found"}
 
-    # 提前计算好兜底倍率，整个函数复用同一个值
+    # Calculate the fallback multiplier in advance and reuse the same value throughout the function
     base_rate = _get_base_rate(card)
 
     total_miles = 0
@@ -35,17 +35,17 @@ def calculate_monthly_miles(card_name: str, spending: dict) -> dict:
         if spend_amount <= 0:
             continue
 
-        # 精确匹配该消费类别
+        # Precisely match the category
         matched_rate = None
         for rate in card["earn_rates"]:
             if rate["category"] == spend_category:
                 matched_rate = rate
                 break
 
-        # 没有精确匹配则用兜底倍率
+        # Use the fallback multiplier if no exact match is found
         if not matched_rate:
             if base_rate is None:
-                # 数据缺失，跳过并警告，不要用魔法数字兜底
+                # Data missing, skip and warn
                 print(f"Warning: no base rate found for card '{card_name}', skipping category '{spend_category}'")
                 continue
             earn_rate = base_rate
@@ -54,7 +54,7 @@ def calculate_monthly_miles(card_name: str, spending: dict) -> dict:
             earn_rate = matched_rate["earn_rate"]
             cap = matched_rate["monthly_cap_sgd"]
 
-        # 计算 cap 内的 miles
+        # Calculate miles within the cap
         if cap:
             effective_spend = min(spend_amount, cap)
         else:
@@ -62,7 +62,7 @@ def calculate_monthly_miles(card_name: str, spending: dict) -> dict:
 
         miles_earned = effective_spend * earn_rate
 
-        # cap 外的溢出部分，用兜底倍率计算
+        # The overflow portion outside the cap is calculated using the fallback multiplier
         if cap and spend_amount > cap:
             overflow = spend_amount - cap
             if base_rate is None:
@@ -122,11 +122,11 @@ if __name__ == "__main__":
         "local": 400
     }
 
-    print("=== 单张卡计算 ===")
+    print("=== Single card calculation ===")
     result = calculate_monthly_miles("Citi Rewards Card", test_spending)
     print(json.dumps(result, indent=2))
 
-    print("\n=== 所有卡对比 ===")
+    print("\n=== All cards comparison ===")
     comparison = compare_cards(test_spending)
     for i, card in enumerate(comparison):
         print(f"{i+1}. {card['card_name']}: {card['total_monthly_miles']} miles/month")

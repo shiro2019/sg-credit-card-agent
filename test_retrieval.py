@@ -4,14 +4,14 @@ from langchain_chroma import Chroma
 
 load_dotenv()
 
-# 读取已有的ChromaDB，不需要重新embedding
+# Reading from the existing ChromaDB instead of re-embedding
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 vectorstore = Chroma(
     persist_directory="chroma_db",
     embedding_function=embeddings
 )
 
-# 测试三个问题
+# Testing three questions
 test_queries = [
     "Which card is best for online shopping?",
     "What is the annual fee for Citi Rewards?",
