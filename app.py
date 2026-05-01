@@ -10,6 +10,12 @@ from tools.calculator import calculate_monthly_miles, compare_cards, get_card_in
 
 load_dotenv()
 
+# Build vector store if not exists
+import os
+if not os.path.exists("chroma_db"):
+    import subprocess
+    subprocess.run(["python", "ingest.py"], check=True)
+
 # Page config
 st.set_page_config(
     page_title="SG Credit Card Advisor",
