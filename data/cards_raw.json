@@ -3,8 +3,27 @@
     {
       "card_name": "Citi Rewards Card",
       "bank": "Citibank",
+      "card_network": "Visa",
+      "card_network_tier": "Signature",
+      "card_tier": "mid",
       "annual_fee": 196.20,
+      "annual_fee_type": "first_year_free",
       "annual_fee_waiver": "First year free",
+      "fx_fee_rate": 2.5,
+      "min_age": 21,
+      "citizenship_requirement": "SC/PR/EP",
+      "new_cardholder_definition": "First-time principal cardholder with Citibank Singapore",
+      "excluded_channels": ["GrabPay top-up", "YouTrip top-up", "Revolut top-up", "CardUp", "ipaymy", "Transit top-up", "EZ-Link top-up", "AXS", "SAM"],
+      "excluded_mcc": ["4829", "4900", "5199", "5960", "5993", "6012", "6050", "6051", "6211", "6300", "6513", "6529", "6530", "6534", "6540", "7349", "7511", "7523", "7800", "7995", "8062", "8211", "8220", "8241", "8244", "8249", "8299", "8398", "8651", "8661", "9211", "9222", "9223", "9311", "9399", "9402", "9405", "9754"],
+      "transfer_partners": [
+        {
+          "partner": "KrisFlyer",
+          "type": "airline",
+          "ratio": "25000:10000",
+          "min_transfer": 10000,
+          "processing_days": 1
+        }
+      ],
       "earn_rates": [
         {
           "category": "online_retail",
@@ -31,25 +50,119 @@
       "points_to_miles_conversion": "25 ThankYou Points = 10 KrisFlyer Miles",
       "points_validity_months": 60,
       "miles_expiry": null,
-      "min_redemption_miles": null,
+      "min_redemption_miles": 10000,
       "sign_up_bonus_miles": 16000,
       "sign_up_bonus_notes": "40,000 Citi ThankYou Points (= 16,000 KrisFlyer Miles) with qualifying spend",
-      "sign_up_spend_requirement_sgd": null,
-      "sign_up_spend_days": null,
+      "sign_up_spend_requirement_sgd": 800,
+      "sign_up_spend_days": 60,
       "renewal_bonus_miles": null,
       "renewal_bonus_notes": null,
-      "priority_pass": null,
-      "travel_insurance_coverage_sgd": null,
-      "travel_insurance_notes": null,
+      "lounge_access": {
+        "included": false,
+        "program": null,
+        "free_visits_per_year": 0,
+        "paid_access": false,
+        "guest_fee_usd": null,
+        "guest_allowed": false,
+        "booking_channel": null,
+        "notes": null
+      },
+      "travel_insurance": {
+        "coverage_sgd": 1000000,
+        "auto_activated": true,
+        "requires_ticket_purchase": true,
+        "covers_flight_delay": true,
+        "covers_baggage_loss": true,
+        "min_delay_hours": 8,
+        "flight_delay_payout_sgd": 100,
+        "claims_contact": "HL Assurance: +65 6702 0202 / service@hlas.com.sg; Claims: +65 6922 6003 / claims@hlas.com.sg",
+        "notes": "Complimentary when full travel fare is charged to the card. Covers cardholder, spouse and children. Policy No. CT000017 underwritten by HL Assurance."
+      },
       "min_income_sgd": 30000,
       "source_url": "https://www.citibank.com.sg/credit-cards/rewards/citi-rewards-card/",
-      "last_updated": "2026-04-27"
+      "last_updated": "2026-05-10"
     },
     {
       "card_name": "DBS Altitude Card",
       "bank": "DBS",
+      "card_network": "Visa",
+      "card_network_tier": "Signature",
+      "card_tier": "mid",
       "annual_fee": 196.20,
+      "annual_fee_type": "spend_waived",
       "annual_fee_waiver": "Min S$25,000 spend per year",
+      "fx_fee_rate": 3.25,
+      "min_age": 21,
+      "citizenship_requirement": "SC/PR/EP",
+      "new_cardholder_definition": "First-time principal cardholder with DBS/POSB",
+      "excluded_channels": [
+        "AMAZE*",
+        "AXS*",
+        "AXS BizPay*",
+        "AXS PTE LTD*",
+        "BAGUS*",
+        "CANTINE*",
+        "EZLINK*",
+        "EZ-LINK*",
+        "PAYPAL *AXS PTE LTD*",
+        "RAZERPAY*",
+        "SAM -*",
+        "SAM PAYMENTS*",
+        "SEDAP*",
+        "SGEBIZ*",
+        "SHOPEEPAY*",
+        "SINGAPORE E-BUSINESS*",
+        "SINGTEL DASH*",
+        "SMOOVPAY*",
+        "TRANSIT 3*",
+        "YOUTRIP*",
+        "AXS payments",
+        "SAM online bill payments",
+        "Bill payments via internet banking",
+        "Cash advances",
+        "Balance transfer"
+      ],
+      "excluded_mcc": [
+        "4784", "4829", "4900", "5047", "5199", "5960", "5993",
+        "6010", "6011", "6012", "6050", "6051",
+        "6211", "6300", "6381", "6399",
+        "6513", "6529", "6530", "6534", "6540",
+        "7349", "7511", "7523",
+        "7995", "8062",
+        "8211", "8220", "8241", "8244", "8249", "8299",
+        "8398", "8651", "8661", "8699", "8999",
+        "9211", "9222", "9223", "9311", "9399", "9402", "9405"
+      ],
+      "transfer_partners": [
+        {
+          "partner": "KrisFlyer",
+          "type": "airline",
+          "ratio": "1:2",
+          "min_transfer": 10000,
+          "processing_days": 5
+        },
+        {
+          "partner": "Asia Miles",
+          "type": "airline",
+          "ratio": "1:2",
+          "min_transfer": 10000,
+          "processing_days": 10
+        },
+        {
+          "partner": "Qantas Frequent Flyer",
+          "type": "airline",
+          "ratio": "1:2",
+          "min_transfer": 10000,
+          "processing_days": 5
+        },
+        {
+          "partner": "Air Asia Points",
+          "type": "airline",
+          "ratio": "1:3",
+          "min_transfer": 1500,
+          "processing_days": 10
+        }
+      ],
       "earn_rates": [
         {
           "category": "overseas",
@@ -66,7 +179,7 @@
           "notes": "All local SGD spend"
         }
       ],
-      "points_to_miles_conversion": "5 DBS Points = 2 KrisFlyer Miles",
+      "points_to_miles_conversion": "1 DBS Point = 2 KrisFlyer Miles",
       "points_validity_months": null,
       "miles_expiry": "Never expire",
       "min_redemption_miles": null,
@@ -76,18 +189,52 @@
       "sign_up_spend_days": 60,
       "renewal_bonus_miles": null,
       "renewal_bonus_notes": null,
-      "priority_pass": null,
-      "travel_insurance_coverage_sgd": null,
-      "travel_insurance_notes": null,
+      "lounge_access": {
+        "included": true,
+        "program": "Priority Pass",
+        "free_visits_per_year": 2,
+        "paid_access": true,
+        "guest_fee_usd": 35,
+        "guest_allowed": true,
+        "booking_channel": "Priority Pass app",
+        "notes": "Exclusively for Visa Signature principal cardmembers. 2 free visits per 12-month membership period: either 2 separate member visits OR 1 concurrent member+guest visit. Additional visits at US$35/person. Register at prioritypass.com/altitudevisacard, access via Priority Pass app."
+      },
+      "travel_insurance": null,
       "min_income_sgd": 30000,
       "source_url": "https://www.dbs.com.sg/personal/cards/credit-cards/dbs-altitude-cards",
-      "last_updated": "2026-04-27"
+      "last_updated": "2026-05-12"
     },
     {
       "card_name": "UOB PRVI Miles Card",
       "bank": "UOB",
+      "card_network": "Visa",
+      "card_network_tier": "Infinite",
+      "card_tier": "premium",
       "annual_fee": 261.60,
+      "annual_fee_type": "first_year_free",
       "annual_fee_waiver": "First year free",
+      "fx_fee_rate": 3.25,
+      "min_age": 21,
+      "citizenship_requirement": "SC/PR/EP",
+      "new_cardholder_definition": "First-time principal cardholder with UOB",
+      "excluded_channels": ["GrabPay top-up", "YouTrip top-up", "Revolut top-up", "CardUp", "ipaymy", "EZ-Link top-up", "AXS", "SAM", "Amaze", "Transit top-up"],
+      "excluded_mcc": ["4829", "4900", "5199", "5960", "5965", "5993", "6012", "6050", "6051", "6211", "6300", "6513", "6529", "6530", "6534", "6540", "7349", "7511", "7523", "7995", "8062", "8211", "8220", "8241", "8244", "8249", "8299", "8398", "8651", "8661", "8699", "8999", "9211", "9222", "9223", "9311", "9399", "9402", "9405"],
+      "transfer_partners": [
+        {
+          "partner": "KrisFlyer",
+          "type": "airline",
+          "ratio": "1:2",
+          "min_transfer": 5000,
+          "processing_days": 3
+        },
+        {
+          "partner": "Asia Miles",
+          "type": "airline",
+          "ratio": "1:2",
+          "min_transfer": 10000,
+          "processing_days": null
+        }
+      ],
       "earn_rates": [
         {
           "category": "airlines_hotels",
@@ -121,18 +268,55 @@
       "sign_up_spend_days": null,
       "renewal_bonus_miles": null,
       "renewal_bonus_notes": null,
-      "priority_pass": null,
-      "travel_insurance_coverage_sgd": null,
-      "travel_insurance_notes": null,
+      "lounge_access": {
+        "included": true,
+        "program": "Priority Pass",
+        "free_visits_per_year": 4,
+        "paid_access": true,
+        "guest_fee_usd": 35,
+        "guest_allowed": true,
+        "booking_channel": "Priority Pass app",
+        "notes": "Principal cardmembers only. Guest visits charged at US$35 per person."
+      },
+      "travel_insurance": {
+        "coverage_sgd": 500000,
+        "auto_activated": false,
+        "requires_ticket_purchase": true,
+        "covers_flight_delay": true,
+        "covers_baggage_loss": null,
+        "min_delay_hours": 6,
+        "flight_delay_payout_sgd": 100,
+        "claims_contact": "United Overseas Insurance Limited (UOI): +65 6222 7733 / contactus@uoi.com.sg; 24h Emergency Assist: +65 6222 7737",
+        "notes": "Opt-in required via electronic application form before each trip. Covers cardmember, spouse and dependent children. Travel delay cash benefit: S$100 first 6h + S$50/subsequent 6h (max S$200/person; industrial action/weather/mechanical fault only). Flight misconnection/overbooking: reimbursement max S$100/person (6h+ delay). Underwritten by UOI."
+      },
       "min_income_sgd": 30000,
       "source_url": "https://www.uob.com.sg/personal/cards/travel/prvi-miles-card.page",
-      "last_updated": "2026-04-27"
+      "last_updated": "2026-05-12"
     },
     {
       "card_name": "OCBC 90°N Card",
       "bank": "OCBC",
+      "card_network": "Visa",
+      "card_network_tier": "Platinum",
+      "card_tier": "mid",
       "annual_fee": 196.20,
-      "annual_fee_waiver": "First year free; subsequent years waived with min S$10,000 spend",
+      "annual_fee_type": "spend_waived",
+      "annual_fee_waiver": "First year free; subsequent years automatically waived with min S$10,000 annual spend, or pay S$196.20 and receive 10,000 renewal miles",
+      "fx_fee_rate": 3.25,
+      "min_age": 21,
+      "citizenship_requirement": "SC/PR/EP",
+      "new_cardholder_definition": "First-time principal cardholder with OCBC",
+      "excluded_channels": ["EZ-Link top-up", "NETS FlashPay top-up", "eNETS", "SAM", "Transit Link", "AXS", "GrabPay top-up", "YouTrip top-up", "Shopee Pay top-up", "Singtel Dash top-up"],
+      "excluded_mcc": ["4111", "4121", "4131", "4784", "4829", "4900", "5047", "5199", "5960", "5993", "6010", "6012", "6051", "6211", "6300", "6513", "6540", "7349", "7523", "7995", "8062", "8211", "8220", "8241", "8244", "8249", "8299", "8398", "8651", "8661", "8675", "8699", "9211", "9222", "9223", "9311", "9399", "9402", "9405"],
+      "transfer_partners": [
+        {
+          "partner": "KrisFlyer",
+          "type": "airline",
+          "ratio": "1:1",
+          "min_transfer": 1000,
+          "processing_days": 2
+        }
+      ],
       "earn_rates": [
         {
           "category": "agoda",
@@ -156,7 +340,7 @@
           "notes": "All local SGD spend"
         }
       ],
-      "points_to_miles_conversion": "1 90°N Mile = 1 KrisFlyer Mile",
+      "points_to_miles_conversion": "1 90°N Mile = 1 KrisFlyer Mile; or 1,000 90°N Miles = S$10 cash rebate (1% base rebate rate, equivalent to 2.1% when earned from overseas spend at 2.1 mpd)",
       "points_validity_months": null,
       "miles_expiry": "Never expire",
       "min_redemption_miles": 1000,
@@ -166,18 +350,52 @@
       "sign_up_spend_days": 30,
       "renewal_bonus_miles": 10000,
       "renewal_bonus_notes": "10,000 bonus miles upon payment of annual fee",
-      "priority_pass": null,
-      "travel_insurance_coverage_sgd": null,
-      "travel_insurance_notes": null,
+      "lounge_access": {
+        "included": true,
+        "program": "DragonPass",
+        "free_visits_per_year": 0,
+        "paid_access": true,
+        "guest_fee_usd": null,
+        "guest_allowed": false,
+        "booking_channel": "DragonPass app",
+        "notes": "Paid access only, no complimentary visits. Fees per DragonPass schedule. Dining offers available at airports via the DragonPass mobile app."
+      },
+      "travel_insurance": null,
       "min_income_sgd": 30000,
       "source_url": "https://www.ocbc.com/personal-banking/cards/90-degrees-travel-credit-card.page",
-      "last_updated": "2026-04-27"
+      "last_updated": "2026-05-12"
     },
     {
       "card_name": "Standard Chartered Journey Card",
       "bank": "Standard Chartered",
+      "card_network": "Visa",
+      "card_network_tier": "Signature",
+      "card_tier": "mid",
       "annual_fee": 196.20,
+      "annual_fee_type": "mandatory",
       "annual_fee_waiver": "Optional first year waiver available at application; no waiver in subsequent years",
+      "fx_fee_rate": 3.5,
+      "min_age": 21,
+      "citizenship_requirement": "SC/PR/EP",
+      "new_cardholder_definition": "First-time principal cardholder with Standard Chartered Singapore",
+      "excluded_channels": ["AXS", "SAM", "EZ-Link top-up", "Transit top-up", "GrabPay top-up", "YouTrip top-up", "Revolut top-up", "CardUp", "ipaymy", "prepaid card/account top-up", "insurance premium payment", "betting/gambling payment"],
+      "excluded_mcc": ["4829", "4900", "5047", "5199", "6012", "6050", "6051", "6211", "6513", "6529", "6530", "6534", "6540", "7299", "7349", "7511", "7523", "8062", "8211", "8220", "8241", "8244", "8249", "8299", "8398", "8651", "8661", "8999", "9211", "9222", "9223", "9311", "9399", "9402", "9405"],
+      "transfer_partners": [
+        {
+          "partner": "KrisFlyer",
+          "type": "airline",
+          "ratio": "25000:10000",
+          "min_transfer": 10000,
+          "processing_days": 5
+        },
+        {
+          "partner": "Asia Miles",
+          "type": "airline",
+          "ratio": "25000:10000",
+          "min_transfer": 10000,
+          "processing_days": 5
+        }
+      ],
       "earn_rates": [
         {
           "category": "bonus_transactions",
@@ -211,16 +429,30 @@
       "sign_up_spend_days": 60,
       "renewal_bonus_miles": 10000,
       "renewal_bonus_notes": "25,000 Rewards Points (= 10,000 KrisFlyer Miles) upon card anniversary and payment of annual fee (effective 1 Jul 2024). Waiving annual fee reverses the bonus.",
-      "priority_pass": {
+      "lounge_access": {
         "included": true,
-        "complimentary_visits_per_year": 2,
-        "notes": "2 complimentary visits per year (principal cardholder only). Guest visits count toward the 2-visit limit. Additional visits charged at Priority Pass prevailing rate."
+        "program": "Priority Pass",
+        "free_visits_per_year": 2,
+        "paid_access": true,
+        "guest_fee_usd": 35,
+        "guest_allowed": true,
+        "booking_channel": "Priority Pass app",
+        "notes": "Access to 1,700+ lounges worldwide."
       },
-      "travel_insurance_coverage_sgd": 500000,
-      "travel_insurance_notes": "Complimentary when travel fare is charged to the card",
+      "travel_insurance": {
+        "coverage_sgd": 500000,
+        "auto_activated": true,
+        "requires_ticket_purchase": true,
+        "covers_flight_delay": false,
+        "covers_baggage_loss": false,
+        "min_delay_hours": null,
+        "flight_delay_payout_sgd": null,
+        "claims_contact": "Allianz Travel: 1800 222 1818 / +65 6222 3350 / scbhelp@allianz.com; 24/7 Emergency: +65 6995 1111; Claims: allianz-assistance.com.sg/claims.html",
+        "notes": "Underwritten by Allianz Insurance Singapore Pte. Ltd. (Policy No. 20230901 PW SG SCB NAC). Covers Personal Accident up to S$500k (Section 1) and Emergency Medical Assistance/Evacuation/Repatriation up to S$25k (Section 2). No flight delay or baggage loss coverage. Worldwide up to 90 consecutive days. 100% of travel fare must be charged to the card. Additional Visa Signature network benefit: eCommerce Purchase Protection (underwritten by AIG, up to USD$200/year for online purchase non-delivery, wrong/damaged items — see www.aig.com/visa/apac)."
+      },
       "min_income_sgd": 30000,
       "source_url": "https://www.sc.com/sg/credit-cards/journey-credit-card/",
-      "last_updated": "2026-04-27"
+      "last_updated": "2026-05-12"
     }
   ]
 }
