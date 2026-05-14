@@ -347,9 +347,14 @@ if prompt := st.chat_input("Ask me about credit cards..."):
     # Agent response
     with st.chat_message("assistant"):
         with st.spinner("Analyzing..."):
-            response = agent.invoke({
-                "messages": [("human", prompt)]
-            })
+            # Build full conversation history
+            history = []
+            for msg in st.session_state.messages:
+                role = "human" if msg["role"] == "user" else "assistant"
+                history.append((role, msg["content"]))
+            history.append(("human", prompt))
+
+            response = agent.invoke({"messages": history})
             answer = response["messages"][-1].content
             answer = answer.replace("S$", "SGD ") # Replace currency symbol avoid displaying garbled characters
             st.markdown(answer)

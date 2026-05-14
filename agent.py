@@ -270,7 +270,8 @@ agent = create_react_agent(
 if __name__ == "__main__":
     print("Singapore Credit Card Advisor")
     print("Type 'quit' to exit\n")
-    
+
+    history = []
     while True:
         user_input = input("You: ").strip()
         if user_input.lower() == "quit":
@@ -278,8 +279,9 @@ if __name__ == "__main__":
         if not user_input:
             continue
 
-        response = agent.invoke({
-            "messages": [("human", user_input)]
-        })
-        
-        print(f"\nAdvisor: {response['messages'][-1].content}\n")
+        history.append(("human", user_input))
+        response = agent.invoke({"messages": history})
+        answer = response["messages"][-1].content
+        history.append(("assistant", answer))
+
+        print(f"\nAdvisor: {answer}\n")
